@@ -1,1 +1,13 @@
-<p>overview-page works!</p>
+<a id="random-button" routerLink="./detail" [queryParams]="{id: randomPokemon}">Random</a>
+
+<table id="table">
+  <caption>Pokemon Table</caption>
+  <tr>
+    <th>Pokemon Name</th>
+    <th>Pokemon Id</th>
+  </tr>
+  <tr *ngFor="let pokemon of pokemon$ | async; let index = index">
+    <td routerLink="./detail" [queryParams]="{id: pokemon.name}">{{pokemon.name}}</td>
+    <td routerLink="./detail" [queryParams]="{id: index + 1}">{{index + 1}}</td>
+  </tr>
+</table>

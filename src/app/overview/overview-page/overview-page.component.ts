@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { RandomPokemonService } from '../random-pokemon.service';
+import { AllPokemonService, Pokemon } from '../all-pokemon.service';
+
+
 
 @Component({
   selector: 'app-overview-page',
   templateUrl: './overview-page.component.html',
   styleUrls: ['./overview-page.component.scss']
 })
-export class OverviewPageComponent implements OnInit {
+export class OverviewPageComponent {
+  public pokemon$: Observable<Pokemon[]> = this.allPokemonService.allPokemon$;
 
-  constructor() { }
+  randomPokemon: number = this.randomPokemonService.getRandomPokemon();
 
-  ngOnInit(): void {
-  }
-
+  constructor(private http: HttpClient, private randomPokemonService: RandomPokemonService, private allPokemonService: AllPokemonService) {}
 }
+
+
+
