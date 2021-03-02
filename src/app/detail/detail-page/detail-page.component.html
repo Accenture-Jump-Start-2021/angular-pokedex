@@ -4,6 +4,6 @@
 </div>
 
 <div id="card" class="hidden">
-  <img id="avatar" [src]="src" alt="">
-  <p id="name">{{name}}</p>
+  <img id="avatar" [src]="src$ | async" alt="">
+  <p id="name">{{name$ | async}}</p>
 </div>
