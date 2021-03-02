@@ -1,1 +1,9 @@
-<p>detail-page works!</p>
+<div id="search">
+  <input #input id="search-input" type="text">
+  <button id="search-button" (click)="updateQueryParam(input.value)">Search</button>
+</div>
+
+<div id="card" class="hidden">
+  <img id="avatar" [src]="src" alt="">
+  <p id="name">{{name}}</p>
+</div>

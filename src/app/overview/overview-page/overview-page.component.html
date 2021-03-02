@@ -6,8 +6,8 @@
     <th>Pokemon Name</th>
     <th>Pokemon Id</th>
   </tr>
-  <tr *ngFor="let pokemon of pokemon$ | async; let index = index">
-    <td routerLink="./detail" [queryParams]="{id: pokemon.name}">{{pokemon.name}}</td>
+  <tr *ngFor="let pokemon of pokemons$ | async; let index = index">
+    <td routerLink="./detail" [queryParams]="{id: pokemon.name}">{{pokemon.name}} </td>
     <td routerLink="./detail" [queryParams]="{id: index + 1}">{{index + 1}}</td>
   </tr>
 </table>

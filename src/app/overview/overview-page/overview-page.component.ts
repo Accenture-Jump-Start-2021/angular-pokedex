@@ -12,12 +12,9 @@ import { AllPokemonService, Pokemon } from '../all-pokemon.service';
   styleUrls: ['./overview-page.component.scss']
 })
 export class OverviewPageComponent {
-  public pokemon$: Observable<Pokemon[]> = this.allPokemonService.allPokemon$;
+  public pokemons$: Observable<Pokemon[]> = this.allPokemonService.allPokemon$;
 
   randomPokemon: number = this.randomPokemonService.getRandomPokemon();
 
-  constructor(private http: HttpClient, private randomPokemonService: RandomPokemonService, private allPokemonService: AllPokemonService) {}
+  constructor(private randomPokemonService: RandomPokemonService, private allPokemonService: AllPokemonService) {}
 }
-
-
-
